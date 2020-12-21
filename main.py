@@ -9,11 +9,15 @@ screen.title("The Pong Game!")
 screen.listen()
 screen.tracer(0)
 
-paddle = Paddle()
+r_paddle = Paddle(350,0)
+l_paddle = Paddle(-350,0)
 
 gameIsOn = True
-screen.onkey(paddle.moveUp, "Up")
-screen.onkey(paddle.moveDown, "Down")
+screen.onkey(r_paddle.moveUp, "Up")
+screen.onkey(r_paddle.moveDown, "Down")
+
+screen.onkey(l_paddle.moveUp, "w")
+screen.onkey(l_paddle.moveDown, "s")
 
 while gameIsOn:
     screen.update()
